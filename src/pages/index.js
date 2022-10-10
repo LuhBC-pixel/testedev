@@ -26,8 +26,7 @@ export default function Home() {
     if (data.login === LOGIN && data.password === PASSWORD) {
       const response = await login(data.login, data.password);
       if (response) {
-        console.log(response);
-        router.push('/dashboard');
+        router.push('/map');
       } else {
         alert('Erro ao fazer login');
       }
