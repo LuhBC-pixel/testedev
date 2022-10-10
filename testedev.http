@@ -1,0 +1,82 @@
+POST https://dev.api.neoestech.com.br/login
+Accept: application/json
+Content-Type: application/json
+
+{
+	"login": "login",
+	"password": "senha"
+}
+
+####
+
+GET https://dev.api.neoestech.com.br/monitoramento/instalacoes
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+####
+
+GET https://dev.api.neoestech.com.br/monitoramento/instalacao/{prefixo_istalacao}/equipamentos
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+####
+
+GET https://dev.api.neoestech.com.br/monitoramento/historico/{id_equipamento}/24?chave={chave}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+####
+
+
+GET https://dev.api.neoestech.com.br/cadastro/precos
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+####
+
+GET https://dev.api.neoestech.com.br/cadastro/precos/{id}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+####
+#
+# Tipos Combustivel: GASOLINA, ETANOL, DIESEL, GNV
+
+POST https://dev.api.neoestech.com.br/cadastro/precos
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+
+{
+    "cidade": "Teste",
+    "combustivel": "ETANOL",
+    "preco": 3.19
+}
+
+####
+#
+# Tipos Combustivel: GASOLINA, ETANOL, DIESEL, GNV
+
+PUT https://dev.api.neoestech.com.br/cadastro/precos/{id}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+{
+    "cidade": "Teste Updated",
+    "combustivel": "ETANOL",
+    "preco": 3.50
+}
+
+#####
+
+DELETE https://dev.api.neoestech.com.br/cadastro/precos/{id}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
