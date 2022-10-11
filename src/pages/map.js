@@ -17,6 +17,7 @@ export default function Map() {
       const clientCSD = response.filter(
         (item) => item.cliente.nome === 'CSD VAREJO'
       );
+      console.log(clientCSD);
       setData(clientCSD);
     } else {
       alert('Erro ao buscar dados');
@@ -30,35 +31,19 @@ export default function Map() {
   return (
     <>
       <Navbar path={router.asPath} />
-      <main>
-        <div>
-          <h1>Mapa!!!</h1>
-          <MapContainer
-            center={[-20.6739, 310.5396]}
-            zoom={13}
-            scrollWheelZoom={false}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-            />
-
-            {data.map((item) => {
-              return (
-                <Circle
-                  key={item.id}
-                  center={[item.latitude, item.longitude]}
-                  radius={20}
-                  fillOpacity={0.5}
-                  stroke={false}
-                >
-                  <Tooltip>Latitude: {item.latitude}</Tooltip>
-                </Circle>
-              );
-            })}
-          </MapContainer>
-        </div>
-      </main>
+      <MapContainer
+        center={[-20.6739, 310.5396]}
+        zoom={5}
+        scrollWheelZoom={false}
+      >
+        <Circle
+          center={[-23.419026, -51.944131]}
+          radius={20}
+          pathOptions={{ color: 'blue' }}
+        >
+          <Tooltip>Latitude</Tooltip>
+        </Circle>
+      </MapContainer>
     </>
   );
 }
